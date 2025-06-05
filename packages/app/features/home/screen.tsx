@@ -8,6 +8,7 @@ export function HomeScreen() {
   return (
     <View className="flex-1 items-center justify-center p-3">
       <H1>Welcome to Solito.</H1>
+      <TextLink href={'/user'}>User</TextLink>
     </View>
   )
 }

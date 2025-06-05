@@ -7,6 +7,7 @@ export function UserDetailScreen() {
   return (
     <View className="flex-1 items-center justify-center">
       <H1>Welcome to User.</H1>
+      <TextLink href={'/'}>Back</TextLink>
     </View>
   )
 }
