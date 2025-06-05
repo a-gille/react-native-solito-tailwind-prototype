@@ -1,0 +1,50 @@
+const emails = [
+  {
+    id: 1,
+    branch: 'Hauptniederlassung Karlsruhe',
+    date: '2025-04-23T10:00:00Z',
+    sentBy: 'System-Administrator',
+    area: 'IT-Abteilung',
+    subject: 'Wichtige Systemwartung am Wochenende',
+    message:
+      'Sehr geehrte Mitarbeiterinnen und Mitarbeiter, am kommenden Wochenende...',
+    attachments: ['wartungsplan.pdf'],
+    isRead: true,
+  },
+  {
+    id: 2,
+    branch: 'Zweigniederlassung Stuttgart',
+    date: '2025-04-24T09:30:00Z',
+    sentBy: 'Projektteam Alpha',
+    area: 'Forschung und Entwicklung',
+    subject: 'Projekt-Update Phase 2',
+    message:
+      'Hallo zusammen, hier ist das neueste Update zur zweiten Phase unseres Projekts...',
+    attachments: ['zwischenbericht.docx', 'präsentation.pptx'],
+    isRead: false,
+  },
+  {
+    id: 3,
+    branch: 'Niederlassung München',
+    date: '2025-04-22T16:45:00Z',
+    sentBy: 'Kundenservice',
+    area: 'Support',
+    subject: 'Ihre Anfrage #78901 - Bearbeitungsstatus',
+    message:
+      'Sehr geehrte Kundin/sehr geehrter Kunde, bezüglich Ihrer Anfrage...',
+    attachments: [],
+    isRead: false,
+  },
+  {
+    id: 4,
+    branch: 'Hauptniederlassung Karlsruhe',
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    area: 'HR',
+    subject: 'Einladung zum Sommerfest 2025',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachments: ['anmeldung.pdf'],
+    isRead: true,
+  },
+]
