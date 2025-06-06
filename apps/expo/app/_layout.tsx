@@ -7,7 +7,11 @@ export default function Root() {
     <Provider>
       <Stack>
         <Stack.Screen name="index" options={{ title: 'Postfach' }} />
-        <Stack.Screen name="user/index" options={{ title: 'Nutzer' }} />
+        <Stack.Screen name="message/[id]" options={{ title: 'Nachricht' }} />
+        <Stack.Screen
+          name="message/send"
+          options={{ title: 'Nachricht versenden' }}
+        />
       </Stack>
     </Provider>
   )

@@ -42,7 +42,7 @@ export function HomeScreen() {
               <Card
                 title={id ?? 'Posteingang'}
                 headerContent={
-                  <TextLink href={'/'}>
+                  <TextLink href={'/message/send'}>
                     <View>
                       <PlusCircle className="h-8 w-8 text-black" />
                     </View>
