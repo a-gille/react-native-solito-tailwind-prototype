@@ -9,6 +9,7 @@ import { ScrollView } from 'moti'
 import { Platform } from 'react-native'
 import { ResponsiveNavigation } from 'app/components/Shared/ResponsiveNavigation'
 import { H1, Text, TextLink } from 'app/design/typography'
+import { ArrowDown } from '@nandorojo/iconic/src'
 
 export function HomeScreen() {
   const [emailsData, setEmailsData] = useState<Email[]>([])
@@ -35,7 +36,13 @@ export function HomeScreen() {
             <ScrollView>
               <Card
                 title={id ?? 'Posteingang'}
-                headerContent={<TextLink href={'/'}>TBD Icon</TextLink>}
+                headerContent={
+                  <TextLink href={'/'}>
+                    <View>
+                      <ArrowDown width={24} height={24} color="#0f6cbd" />
+                    </View>
+                  </TextLink>
+                }
               >
                 <MailboxTable emails={emailsData} />
               </Card>
