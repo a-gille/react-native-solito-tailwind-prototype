@@ -47,4 +47,40 @@ const emails = [
     attachments: ['anmeldung.pdf'],
     isRead: true,
   },
+  {
+    id: 5,
+    branch: 'Hauptniederlassung Karlsruhe',
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    area: 'HR',
+    subject: 'Einladung zum Sommerfest 2025',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachments: ['anmeldung.pdf'],
+    isRead: true,
+  },
+  {
+    id: 6,
+    branch: 'Hauptniederlassung Karlsruhe',
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    area: 'HR',
+    subject: 'Einladung zum Sommerfest 2025',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachments: ['anmeldung.pdf'],
+    isRead: true,
+  },
+  {
+    id: 7,
+    branch: 'Hauptniederlassung Karlsruhe',
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    area: 'HR',
+    subject: 'Einladung zum Sommerfest 2025',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachments: ['anmeldung.pdf'],
+    isRead: true,
+  },
 ]

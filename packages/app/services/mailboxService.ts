@@ -34,6 +34,38 @@ const emails: Email[] = [
       'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
     attachmentCount: null,
   },
+  {
+    id: 5,
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachmentCount: null,
+  },
+  {
+    id: 6,
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachmentCount: null,
+  },
+  {
+    id: 7,
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachmentCount: null,
+  },
+  {
+    id: 8,
+    date: '2025-04-21T11:20:00Z',
+    sentBy: 'Personalabteilung',
+    message:
+      'Liebe Kolleginnen und Kollegen, wir laden Sie herzlich zu unserem diesjährigen Sommerfest ein...',
+    attachmentCount: null,
+  },
 ]
 
 export const getAllEmails = (): Email[] => {
