@@ -8,6 +8,7 @@ import { createParam } from 'solito'
 import { ScrollView } from 'moti'
 import { Platform } from 'react-native'
 import { ResponsiveNavigation } from 'app/components/Shared/ResponsiveNavigation'
+import { H1, Text, TextLink } from 'app/design/typography'
 
 export function HomeScreen() {
   const [emailsData, setEmailsData] = useState<Email[]>([])
@@ -22,18 +23,24 @@ export function HomeScreen() {
 
   return (
     <View className="flex-1">
-      <View className="flex-1 flex-row px-2 pt-2">
-        {!isMobile && (
-          <View className="flex-[1]">
-            <ResponsiveNavigation />
+      <View className="flex-1">
+        {!isMobile && <H1 className="text-center">Postfach</H1>}
+        <View className="flex-1 flex-row px-2 pt-2">
+          {!isMobile && (
+            <View className="flex-[1]">
+              <ResponsiveNavigation />
+            </View>
+          )}
+          <View className="flex-[6]">
+            <ScrollView>
+              <Card
+                title={id ?? 'Posteingang'}
+                headerContent={<TextLink href={'/'}>TBD Icon</TextLink>}
+              >
+                <MailboxTable emails={emailsData} />
+              </Card>
+            </ScrollView>
           </View>
-        )}
-        <View className="flex-[6]">
-          <ScrollView>
-            <Card title={id ?? 'Posteingang'}>
-              <MailboxTable emails={emailsData} />
-            </Card>
-          </ScrollView>
         </View>
       </View>
 

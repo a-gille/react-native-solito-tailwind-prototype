@@ -74,4 +74,4 @@ export const TextLink = styled<
       {...props}
     />
   )
-}, 'text-base font-bold')
+}, 'text-base font-semibold')

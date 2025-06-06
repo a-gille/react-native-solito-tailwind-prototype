@@ -6,7 +6,7 @@ export default function Root() {
   return (
     <Provider>
       <Stack>
-        <Stack.Screen name="index" options={{ title: 'Startseite' }} />
+        <Stack.Screen name="index" options={{ title: 'Postfach' }} />
         <Stack.Screen name="user/index" options={{ title: 'Nutzer' }} />
       </Stack>
     </Provider>

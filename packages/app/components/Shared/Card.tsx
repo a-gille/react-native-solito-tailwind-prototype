@@ -1,15 +1,19 @@
-import { Text } from 'app/design/typography'
 import { View } from 'app/design/view'
+import { Text } from 'app/design/typography'
 
-type CardProps = {
+interface CardProps {
   title: string
+  headerContent?: React.ReactNode
   children: React.ReactNode
 }
 
-export function Card({ title, children }: CardProps) {
+export function Card({ title, headerContent, children }: CardProps) {
   return (
     <View className="mb-4 rounded-md bg-white p-4 shadow-md">
-      <Text className="text-primary mb-2 text-2xl font-semibold">{title}</Text>
+      <View className="mb-2 flex-row justify-between">
+        <Text className="text-primary text-2xl font-semibold">{title}</Text>
+        {headerContent && <View className="mt-2">{headerContent}</View>}
+      </View>
       <View>{children}</View>
     </View>
   )

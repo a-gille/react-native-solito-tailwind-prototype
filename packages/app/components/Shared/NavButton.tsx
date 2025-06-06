@@ -7,14 +7,12 @@ const { useParam } = createParam<{ id: string }>()
 
 type NavButtonProps = ComponentProps<typeof TextLink> & {
   id: string
-  title: string
   classNameActive: string
   classNameInActive: string
 }
 
 export function NavButton({
   id,
-  title,
   className = '',
   classNameActive = '',
   classNameInActive = '',
@@ -37,8 +35,6 @@ export function NavButton({
         ${isActive ? classNameActive : classNameInActive}
         px-2 transition-colors duration-200
       `}
-    >
-      {title}
-    </TextLink>
+    ></TextLink>
   )
 }

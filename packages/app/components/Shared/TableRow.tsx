@@ -17,12 +17,14 @@ export function TableRow({ email }: Props) {
     <View
       className={`flex-row items-center border-b border-gray-200 ${platformDesign}`}
     >
-      <Text className="w-1/4">{new Date(email.date).toLocaleDateString()}</Text>
-      <Text className="w-1/2">{email.sentBy}</Text>
-      <Text className="w-1/6 text-right">{email.attachmentCount}</Text>
+      <Text className="flex-[2]">
+        {new Date(email.date).toLocaleDateString()}
+      </Text>
+      <Text className="flex-[3]">{email.sentBy}</Text>
+      <Text className="flex-[2] text-right">{email.attachmentCount}</Text>
       <TextLink
         href={`/postfach/message?id=${email.id}`}
-        className="w-1/12 text-center"
+        className="flex-[1] text-center"
       >
         <Text>TBD Icon</Text>
       </TextLink>

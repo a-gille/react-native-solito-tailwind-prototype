@@ -11,7 +11,6 @@ export function BottomTabBar() {
         classNameInActive="text-gray-500"
         href="/?id=Posteingang"
         id="Posteingang"
-        title="Posteingang"
       >
         Posteingang
       </NavButton>
@@ -21,7 +20,6 @@ export function BottomTabBar() {
         classNameInActive="text-gray-500"
         href="/?id=Postausgang"
         id="Postausgang"
-        title="Postausgang"
       >
         Postausgang
       </NavButton>
