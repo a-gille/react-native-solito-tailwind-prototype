@@ -29,7 +29,7 @@ export interface AProps extends ComponentProps<typeof Text> {
 
 export const A = forwardRef<NativeText, StyledProps<AProps>>(function A(
   { className = '', href, target, ...props },
-  ref
+  ref,
 ) {
   const nativeAProps = Platform.select<Partial<AProps>>({
     web: {
@@ -74,4 +74,4 @@ export const TextLink = styled<
       {...props}
     />
   )
-}, 'text-base font-bold hover:underline text-blue-500')
+}, 'text-base font-bold')

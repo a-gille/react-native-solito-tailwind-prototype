@@ -1,37 +1,33 @@
-import {
-  View as RNView,
-  Text as RNText,
-  Pressable as RNPressable,
-} from 'react-native'
 import { Email } from 'app/models/email'
-import { useRouter } from 'solito/router'
-import { styled } from 'nativewind'
-
-export const View = styled(RNView)
-export const Text = styled(RNText)
-export const Pressable = styled(RNPressable)
+import { View } from 'app/design/view'
+import { Text, TextLink } from 'app/design/typography'
+import { Platform } from 'react-native'
 
 interface Props {
   email: Email
 }
 
 export function TableRow({ email }: Props) {
-  const router = useRouter()
+  const platformDesign = Platform.select({
+    web: 'py-4 hover:bg-gray-100',
+    default: 'py-2',
+  })
 
   return (
-    <View className="flex-row items-center border-b border-gray-200 px-4 py-3">
-      <Text className="flex-1">
+    <View
+      className={`flex-row items-center border-b border-gray-200 ${platformDesign}`}
+    >
+      <Text className="flex-[1]">
         {new Date(email.date).toLocaleDateString()}
       </Text>
-      <Text className="flex-1">{email.sentBy}</Text>
-      <Text className="flex-1 text-right">{email.attachmentCount}</Text>
-      <Pressable
-        onPress={() => router.push(`/postfach/message?id=${email.id}`)}
-        className="h-12 w-12 items-center justify-center"
-        accessibilityLabel="Details anzeigen"
+      <Text className="flex-[3]">{email.sentBy}</Text>
+      <Text className="flex-[2] text-right">{email.attachmentCount}</Text>
+      <TextLink
+        href={`/postfach/message?id=${email.id}`}
+        className="flex-[1] text-center"
       >
-        <Text>TBD Button</Text>
-      </Pressable>
+        <Text>TBD Icon</Text>
+      </TextLink>
     </View>
   )
 }
