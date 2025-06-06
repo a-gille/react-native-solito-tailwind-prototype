@@ -8,8 +8,8 @@ import { createParam } from 'solito'
 import { ScrollView } from 'moti'
 import { Platform } from 'react-native'
 import { ResponsiveNavigation } from 'app/components/Shared/ResponsiveNavigation'
-import { H1, Text, TextLink } from 'app/design/typography'
-import { ArrowDown } from '@nandorojo/iconic/src'
+import { H1, TextLink } from 'app/design/typography'
+import { PlusCircle, Mail } from '@nandorojo/iconic/src'
 
 export function HomeScreen() {
   const [emailsData, setEmailsData] = useState<Email[]>([])
@@ -25,7 +25,12 @@ export function HomeScreen() {
   return (
     <View className="flex-1">
       <View className="flex-1">
-        {!isMobile && <H1 className="text-center">Postfach</H1>}
+        {!isMobile && (
+          <View className="flex-row  items-center justify-center gap-4">
+            <Mail className="text-primary h-10 w-10" />
+            <H1>Postfach</H1>
+          </View>
+        )}
         <View className="flex-1 flex-row px-2 pt-2">
           {!isMobile && (
             <View className="flex-[1]">
@@ -39,7 +44,7 @@ export function HomeScreen() {
                 headerContent={
                   <TextLink href={'/'}>
                     <View>
-                      <ArrowDown width={24} height={24} color="#0f6cbd" />
+                      <PlusCircle className="h-8 w-8 text-black" />
                     </View>
                   </TextLink>
                 }

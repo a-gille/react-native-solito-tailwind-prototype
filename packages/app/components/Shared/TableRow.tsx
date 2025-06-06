@@ -2,6 +2,7 @@ import { Email } from 'app/models/email'
 import { View } from 'app/design/view'
 import { Text, TextLink } from 'app/design/typography'
 import { Platform } from 'react-native'
+import { Eye } from '@nandorojo/iconic/src'
 
 interface Props {
   email: Email
@@ -22,12 +23,11 @@ export function TableRow({ email }: Props) {
       </Text>
       <Text className="flex-[3]">{email.sentBy}</Text>
       <Text className="flex-[2] text-right">{email.attachmentCount}</Text>
-      <TextLink
-        href={`/postfach/message?id=${email.id}`}
-        className="flex-[1] text-center"
-      >
-        <Text>TBD Icon</Text>
-      </TextLink>
+      <View className=" flex-[1] items-center">
+        <TextLink href={`/postfach/message?id=${email.id}`}>
+          <Eye className="color-black h-6 w-6" />
+        </TextLink>
+      </View>
     </View>
   )
 }
