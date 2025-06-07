@@ -67,7 +67,7 @@ export function MailDetailScreen() {
                   </NormalButton>
                   <NormalButton
                     className="bg-primary rounded-md  text-white"
-                    href={'/'}
+                    href={'/message/send'}
                   >
                     Antworten
                   </NormalButton>

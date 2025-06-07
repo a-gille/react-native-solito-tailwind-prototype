@@ -106,7 +106,7 @@ export function MailSendScreen() {
               </NormalButton>
               <NormalButton
                 className="bg-primary rounded-md  text-white"
-                href={'/'}
+                href={'/?id=Postausgang'}
               >
                 Abenden
               </NormalButton>
