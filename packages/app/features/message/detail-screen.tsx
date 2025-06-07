@@ -61,7 +61,7 @@ export function MailDetailScreen() {
                 <View className="flex-row items-center justify-between">
                   <NormalButton
                     href={'/?id=Posteingang'}
-                    className="border border-solid border-gray-200"
+                    className="border border-solid border-gray-300"
                   >
                     Zurück
                   </NormalButton>

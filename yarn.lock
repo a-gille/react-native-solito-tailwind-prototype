@@ -2867,6 +2867,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-picker/picker@npm:^2.11.0":
+  version: 2.11.0
+  resolution: "@react-native-picker/picker@npm:2.11.0"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 889107a9c6d6b23404332ec60d7526a6244ff6433be1e06892014849c97dce8a52c1d7c670aa89761ad814da923c7585b2934bf50f8c8431fdb50f28d4a55fe3
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:^0.72.0":
   version: 0.72.0
   resolution: "@react-native/assets-registry@npm:0.72.0"
@@ -11126,6 +11136,7 @@ __metadata:
   resolution: "solito-with-tailwind@workspace:."
   dependencies:
     "@nandorojo/iconic": ^0.0.2
+    "@react-native-picker/picker": ^2.11.0
     "@types/react": ^18.2.21
     "@types/react-native": ^0.72.2
     eslint: ^8.21.0

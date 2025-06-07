@@ -29,6 +29,7 @@
   "packageManager": "yarn@3.4.1",
   "dependencies": {
     "@nandorojo/iconic": "^0.0.2",
+    "@react-native-picker/picker": "^2.11.0",
     "react-native-svg": "^15.12.0"
   }
 }

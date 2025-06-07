@@ -55,7 +55,6 @@ export function HomeScreen() {
           </View>
         </View>
       </View>
-
       {isMobile && <ResponsiveNavigation />}
     </View>
   )
