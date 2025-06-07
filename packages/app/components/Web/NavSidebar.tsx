@@ -12,7 +12,6 @@ export function NavSidebar() {
         classNameInActive="border-l-2 border-transparent"
         href="/?id=Posteingang"
         id="Posteingang"
-        title="Posteingang"
       >
         Posteingang
       </NavButton>

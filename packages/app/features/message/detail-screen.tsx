@@ -11,6 +11,7 @@ import { ScrollView } from 'moti'
 import { Card } from 'app/components/Shared/Card'
 import { Mail } from '@nandorojo/iconic/src'
 import { AttachmentTable } from 'app/components/Shared/AttachmentTable'
+import { NormalButton } from 'app/components/Shared/NormalButton'
 
 export function MailDetailScreen() {
   const [email, setEmail] = useState<Email>()
@@ -58,18 +59,18 @@ export function MailDetailScreen() {
                   <AttachmentTable attachments={attachments} />
                 </View>
                 <View className="flex-row items-center justify-between">
-                  <TextLink
-                    className="rounded-md border border-solid border-gray-200 px-4 py-1"
+                  <NormalButton
                     href={'/?id=Posteingang'}
+                    className="border border-solid border-gray-200"
                   >
                     Zurück
-                  </TextLink>
-                  <TextLink
-                    className="bg-primary rounded-md px-2 py-1 text-white"
+                  </NormalButton>
+                  <NormalButton
+                    className="bg-primary rounded-md  text-white"
                     href={'/'}
                   >
                     Antworten
-                  </TextLink>
+                  </NormalButton>
                 </View>
               </Card>
             </ScrollView>

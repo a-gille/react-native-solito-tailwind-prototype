@@ -9,7 +9,7 @@ interface CardProps {
 
 export function Card({ title, headerContent, children }: CardProps) {
   return (
-    <View className="mb-4 rounded-md bg-white p-4 shadow-md">
+    <View className="mb-4 rounded-md border border-gray-200 bg-white p-4 shadow-md">
       <View className="mb-2 flex-row justify-between">
         <Text className="text-primary text-2xl font-semibold">{title}</Text>
         {headerContent && <View className="mt-2">{headerContent}</View>}

@@ -1,30 +1,13 @@
-import { createParam } from 'solito'
-import { H1, Text, TextLink } from 'app/design/typography'
+import { H1, Text } from 'app/design/typography'
 import { View } from 'app/design/view'
-import { useEffect, useState } from 'react'
-import { Email } from 'app/models/email'
 import { Platform } from 'react-native'
-import { getEmailById } from 'app/services/mailboxService'
-import { Attachment } from 'app/models/attachment'
-import { getAttachmentById } from 'app/services/attachmentService'
 import { ScrollView } from 'moti'
 import { Card } from 'app/components/Shared/Card'
-import { Mail } from '@nandorojo/iconic/src'
-import { AttachmentTable } from 'app/components/Shared/AttachmentTable'
+import { Mail, Upload } from '@nandorojo/iconic/src'
+import { NormalButton } from 'app/components/Shared/NormalButton'
 
 export function MailSendScreen() {
-  const [email, setEmail] = useState<Email>()
-  const [attachments, setAttachments] = useState<Attachment[]>([])
-  const { useParam } = createParam<{ id: string }>()
-  const [id] = useParam('id')
   const isMobile = Platform.OS !== 'web'
-
-  useEffect(() => {
-    if (!id || typeof id !== 'string') return
-    const emailId = parseInt(id, 10)
-    setEmail(getEmailById(emailId))
-    setAttachments(getAttachmentById(emailId))
-  }, [id])
 
   return (
     <View className="flex-1">
@@ -32,44 +15,73 @@ export function MailSendScreen() {
         {!isMobile && (
           <View className="flex-row  items-center justify-center gap-4">
             <Mail className="text-primary h-10 w-10" />
-            <H1>Nachricht</H1>
+            <H1>Nachricht versenden</H1>
           </View>
         )}
         <View className="flex-1 flex-row px-2 pt-2">
           <View className="flex-[6]">
             <ScrollView>
-              <Card title={'Angaben zur Nachricht'}>
+              <Card
+                title={'Angaben zur Nachricht'}
+                headerContent={
+                  <View className="flex-row gap-1">
+                    <Text>Pflichtfelder</Text>
+                    <Text className="text-red-400">*</Text>
+                  </View>
+                }
+              >
                 <View className="mb-4">
-                  <Text>Datum</Text>
-                  <Text className="text-primary">
-                    {new Date(email?.date ?? '').toLocaleDateString()}
+                  <View className="flex-row gap-1">
+                    <Text>Betreff</Text>
+                    <Text className="text-red-400">*</Text>
+                  </View>
+                </View>
+                <View className="mb-4">
+                  <View className="flex-row gap-1">
+                    <Text>Nachricht</Text>
+                    <Text className="text-red-400">*</Text>
+                  </View>
+                </View>
+                <View className="mb-4 gap-4">
+                  <Text>
+                    Hier können Sie uns ein oder mehrere Dokumente zur Verfügung
+                    stellen und kommentieren.
                   </Text>
-                </View>
-                <View className="mb-4">
-                  <Text>Versendet von</Text>
-                  <Text className="text-primary">{email?.sentBy}</Text>
-                </View>
-                <View className="mb-4">
-                  <Text>Nachricht</Text>
-                  <Text className="text-primary">{email?.message}</Text>
+                  <View>
+                    <NormalButton
+                      className="hover:text-primary bg-primary"
+                      href={'/'}
+                    >
+                      <View className="gap-2cd flex-row items-center">
+                        <Upload />
+                        <Text>Datei hinzufügen</Text>
+                      </View>
+                    </NormalButton>
+                  </View>
                 </View>
                 <View className="mb-6">
-                  <Text>Angehängte Dokumente</Text>
-                  <AttachmentTable attachments={attachments} />
+                  <Text>
+                    <Text className="font-semibold">Hinweis:</Text> Erlaubte
+                    Dateiformate sind .bmp, .doc, .docx, .gif, .jpeg, .jpg,
+                    .pdf, .png, .rtf, .tif, .tiff, .txt, .xls oder .xlsx.
+                    Passwortgeschützte Dateien können nicht verarbeitet werden.
+                    Es dürfen maximal 30 MB hochgeladen werden. Eine Datei darf
+                    maximal 10 MB groß sein.
+                  </Text>
                 </View>
                 <View className="flex-row items-center justify-between">
-                  <TextLink
-                    className="rounded-md border border-solid border-gray-200 px-4 py-1"
+                  <NormalButton
                     href={'/?id=Posteingang'}
+                    className="border border-solid border-gray-200"
                   >
-                    Zurück
-                  </TextLink>
-                  <TextLink
-                    className="bg-primary rounded-md px-2 py-1 text-white"
+                    Abbrechen
+                  </NormalButton>
+                  <NormalButton
+                    className="bg-primary rounded-md  text-white"
                     href={'/'}
                   >
-                    Antworten
-                  </TextLink>
+                    Abenden
+                  </NormalButton>
                 </View>
               </Card>
             </ScrollView>
