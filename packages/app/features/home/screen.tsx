@@ -44,7 +44,7 @@ export function HomeScreen() {
                 headerContent={
                   <TextLink href={'/message/send'}>
                     <View>
-                      <PlusCircle className="h-8 w-8 text-black" />
+                      <PlusCircle className="h-8 w-8 text-gray-600" />
                     </View>
                   </TextLink>
                 }

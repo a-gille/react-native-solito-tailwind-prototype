@@ -2,7 +2,6 @@ import { View } from 'app/design/view'
 import { Email } from 'app/models/email'
 import { TableHeader } from './TableHeader'
 import { TableRow } from './TableRow'
-import { Platform, StyleSheet, ScrollView } from 'react-native'
 
 interface Props {
   emails: Email[]

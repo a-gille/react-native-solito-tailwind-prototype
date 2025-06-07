@@ -25,7 +25,7 @@ export function TableRow({ email }: Props) {
       <Text className="flex-[2] text-right">{email.attachmentCount}</Text>
       <View className=" flex-[1] items-center">
         <TextLink href={`/message/${email.id}`}>
-          <Eye className="color-black h-6 w-6" />
+          <Eye className="h-6 w-6 text-gray-600" />
         </TextLink>
       </View>
     </View>
