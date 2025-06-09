@@ -3,11 +3,13 @@ import { View } from 'app/design/view'
 import { Platform } from 'react-native'
 import { ScrollView } from 'moti'
 import { Card } from 'app/components/Shared/Card'
-import { Camera, Mail, Upload } from '@nandorojo/iconic/src'
+import { Mail } from '@nandorojo/iconic/src'
 import { NormalButton } from 'app/components/Shared/NormalButton'
 import { PlatformSelect } from 'app/components/Shared/PlatformSelect'
 import { useState } from 'react'
 import { Textarea } from 'app/components/Shared/Textarea'
+import { UploadButton } from 'app/components/Shared/UploadButton'
+import { CameraButton } from 'app/components/Mobile/CameraButton'
 
 export function MailSendScreen() {
   const isMobile = Platform.OS !== 'web'
@@ -69,22 +71,8 @@ export function MailSendScreen() {
                 stellen und kommentieren.
               </Text>
               <View className="flex-row justify-between">
-                <NormalButton className="hover:text-primary" href="/">
-                  <View className="flex-row items-center gap-1">
-                    <Upload className={isMobile ? 'text-black' : ''} />
-                    <Text>Datei hinzufügen</Text>
-                  </View>
-                </NormalButton>
-                {isMobile ? (
-                  <NormalButton href="/">
-                    <View className="flex-row items-center gap-1">
-                      <Camera className="text-black" />
-                      <Text>Bild aufnehmen</Text>
-                    </View>
-                  </NormalButton>
-                ) : (
-                  <></>
-                )}
+                <UploadButton />
+                {isMobile ? <CameraButton /> : <></>}
               </View>
             </View>
             <View className="mb-6">
@@ -105,7 +93,7 @@ export function MailSendScreen() {
                 Abbrechen
               </NormalButton>
               <NormalButton
-                className="bg-primary rounded-md  text-white"
+                className="bg-primary text-white"
                 href={'/?id=Postausgang'}
               >
                 Abenden

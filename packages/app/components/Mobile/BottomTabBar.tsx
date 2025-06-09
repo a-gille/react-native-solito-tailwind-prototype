@@ -8,7 +8,7 @@ export function BottomTabBar() {
       <NavButton
         className="flex-1 px-2 py-2 text-center"
         classNameActive="border-b-2 border-primary text-primary"
-        classNameInActive="text-gray-500"
+        classNameInActive="text-gray-500 border-b-2 border-transparent"
         href="/?id=Posteingang"
         id="Posteingang"
       >
@@ -17,7 +17,7 @@ export function BottomTabBar() {
       <NavButton
         className="flex-1 px-2 py-2 text-center"
         classNameActive="border-b-2 border-primary text-primary"
-        classNameInActive="text-gray-500"
+        classNameInActive="text-gray-500 border-b-2 border-transparent"
         href="/?id=Postausgang"
         id="Postausgang"
       >

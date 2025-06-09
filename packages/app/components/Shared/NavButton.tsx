@@ -33,7 +33,7 @@ export function NavButton({
       className={`
         ${className}
         ${isActive ? classNameActive : classNameInActive}
-        px-2 transition-colors duration-200
+        px-2 transition-colors duration-500
       `}
     ></TextLink>
   )

@@ -5801,6 +5801,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"expo-document-picker@npm:^13.1.5":
+  version: 13.1.5
+  resolution: "expo-document-picker@npm:13.1.5"
+  peerDependencies:
+    expo: "*"
+  checksum: d64ef95c64ce7de5c73225725f8dc954a66f8b68843b20e694fe013e7d96cf554674d27744b1cd44110ca9965e153d2d7e018b2996fdbb33b205e395f5ec93c0
+  languageName: node
+  linkType: hard
+
 "expo-file-system@npm:~15.4.0, expo-file-system@npm:~15.4.4":
   version: 15.4.4
   resolution: "expo-file-system@npm:15.4.4"
@@ -5834,6 +5843,26 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 243f961d95d40996f216f2618336dd3c3f49da798e6ccd789a0484fdab0c018a6c9ec9d8e6acd4274e50572682368406effc9409d613c652732cb312f2e34187
+  languageName: node
+  linkType: hard
+
+"expo-image-loader@npm:~5.1.0":
+  version: 5.1.0
+  resolution: "expo-image-loader@npm:5.1.0"
+  peerDependencies:
+    expo: "*"
+  checksum: dafd182e9cea5c6b81202f62d4016be51e5669e13f76e0a514b58b9c502c7366e5b5df02d600897e0d302acd1823eb5b2ca23a2c3f7242f173d2414caed42e1a
+  languageName: node
+  linkType: hard
+
+"expo-image-picker@npm:^16.1.4":
+  version: 16.1.4
+  resolution: "expo-image-picker@npm:16.1.4"
+  dependencies:
+    expo-image-loader: ~5.1.0
+  peerDependencies:
+    expo: "*"
+  checksum: 66fc8c4724c7b8219645259de4d9e61353120398ef2339fd8a5225e0a13a26d4a9851edd6d230086e4ff0997754eea0387d9f5f191502fb64e34228a1e65e340
   languageName: node
   linkType: hard
 
@@ -11140,6 +11169,8 @@ __metadata:
     "@types/react": ^18.2.21
     "@types/react-native": ^0.72.2
     eslint: ^8.21.0
+    expo-document-picker: ^13.1.5
+    expo-image-picker: ^16.1.4
     prettier: ^3.0.3
     prettier-plugin-tailwindcss: ^0.5.4
     react-native-svg: ^15.12.0
