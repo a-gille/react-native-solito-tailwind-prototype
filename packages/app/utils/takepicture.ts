@@ -1,18 +1,24 @@
 import * as ImagePicker from 'expo-image-picker'
 
-export async function pickFromCamera() {
+export async function takePicture(): Promise<string | undefined> {
   const permission = await ImagePicker.requestCameraPermissionsAsync()
 
   if (!permission.granted) {
-    alert('Kamerazugriff wurde verweigert.')
-    return
+    return undefined
   }
 
   const result = await ImagePicker.launchCameraAsync()
 
   if (!result.canceled) {
     const photo = result.assets[0]
-    console.log('Aufgenommenes Foto:', photo)
-    return photo
+
+    if (photo?.uri != undefined) {
+      const name = photo.uri.split('/').pop() || ''
+      console.log(name)
+      return name
+    } else {
+      return undefined
+    }
   }
+  return undefined
 }

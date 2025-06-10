@@ -10,10 +10,21 @@ import { useState } from 'react'
 import { Textarea } from 'app/components/Shared/Textarea'
 import { UploadButton } from 'app/components/Shared/UploadButton'
 import { CameraButton } from 'app/components/Mobile/CameraButton'
+import { AttachmentWithComment } from 'app/components/Shared/AttachmentWithComment'
 
 export function MailSendScreen() {
   const isMobile = Platform.OS !== 'web'
   const [selected, setSelected] = useState('1')
+  const [attachments, setAttachments] = useState<string[]>([])
+
+  const addAttachment = (title: string) => {
+    setAttachments((prev) => [...prev, title])
+  }
+
+  function removeByIndex(i: number) {
+    setAttachments((prev) => prev.filter((_, index) => index !== i))
+  }
+
   const options = [
     { label: 'Allgemeine Anfrage', value: '1' },
     { label: 'Beschwerde', value: '2' },
@@ -44,7 +55,7 @@ export function MailSendScreen() {
                 <Text>Betreff</Text>
                 <Text className="text-red-400">*</Text>
               </View>
-              <View className="">
+              <View>
                 <PlatformSelect
                   value={selected}
                   onValueChange={setSelected}
@@ -71,9 +82,19 @@ export function MailSendScreen() {
                 stellen und kommentieren.
               </Text>
               <View className="flex-row justify-between">
-                <UploadButton />
-                {isMobile ? <CameraButton /> : <></>}
+                <UploadButton onAdd={addAttachment} />
+                {isMobile ? <CameraButton onAdd={addAttachment} /> : <></>}
               </View>
+            </View>
+            <View>
+              {attachments.map((value, index) => (
+                <AttachmentWithComment
+                  id={index}
+                  title={value}
+                  onDelete={removeByIndex}
+                  key={index}
+                ></AttachmentWithComment>
+              ))}
             </View>
             <View className="mb-6">
               <Text>
