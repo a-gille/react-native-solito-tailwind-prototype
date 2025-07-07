@@ -19,7 +19,7 @@ export function CameraButton({ onAdd }: Props) {
   return (
     <NormalPressable onPress={() => onPress()}>
       <Camera className="text-black" />
-      <Text className="font-sm text-sm ">Datei Hinzufügen</Text>
+      <Text className="font-sm text-sm ">Datei hinzufügen</Text>
     </NormalPressable>
   )
 }

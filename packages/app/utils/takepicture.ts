@@ -14,7 +14,6 @@ export async function takePicture(): Promise<string | undefined> {
 
     if (photo?.uri != undefined) {
       const name = photo.uri.split('/').pop() || ''
-      console.log(name)
       return name
     } else {
       return undefined

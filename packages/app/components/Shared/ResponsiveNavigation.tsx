@@ -6,14 +6,10 @@ import { BottomTabBar } from '../Mobile/BottomTabBar'
 
 export function ResponsiveNavigation() {
   const isWeb = Platform.OS === 'web'
+  const TabBar = Platform.select({
+    web: <NavSidebar />,
+    default: <BottomTabBar />,
+  })
 
-  if (isWeb) {
-    return (
-      <View className="flex-[1]">
-        <NavSidebar />
-      </View>
-    )
-  }
-
-  return <BottomTabBar />
+  return TabBar
 }

@@ -6,7 +6,7 @@ import { NavButton } from '../Shared/NavButton'
 export function NavSidebar() {
   return (
     <View className="flex-col space-y-2 py-4">
-      <Text className="text-primary text-lg font-bold">Postach</Text>
+      <Text className="text-primary text-lg font-bold">Postfach</Text>
       <NavButton
         classNameActive="border-primary border-l-2"
         classNameInActive="border-l-2 border-transparent"

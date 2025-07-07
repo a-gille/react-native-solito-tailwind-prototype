@@ -21,7 +21,7 @@ export function UploadButton({ onAdd }: Props) {
   return (
     <NormalPressable onPress={() => onPress()}>
       <Upload className={isMobile ? 'text-black' : ''} />
-      <Text className="font-sm text-sm ">Datei Hinzufügen</Text>
+      <Text className="font-sm text-sm ">Datei hinzufügen</Text>
     </NormalPressable>
   )
 }
